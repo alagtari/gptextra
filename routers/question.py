@@ -28,7 +28,7 @@ async def create( request : Request ,db: Session = Depends(get_db)):
         body = json.loads(await request.body())
         response = question.create(db,body)
         return {"status" : 200 , "data" : response }
-        return body
+
 
 
 

@@ -14,9 +14,9 @@ class Question(Base):
     question_text = Column(String(255))
     response_text = Column(String(255))
     chat_id = Column(Integer, ForeignKey('chat.id'))
-    image = Column(LargeBinary(length=(2**32)-1))
-    audio = Column(LargeBinary(length=(2**32)-1))
-    response_audio = Column(LargeBinary(length=(2**32)-1)) 
+    image = Column(LargeBinary)
+    audio = Column(LargeBinary)
+    response_audio = Column(LargeBinary)  
 
 
 

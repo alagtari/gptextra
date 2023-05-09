@@ -15,7 +15,7 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-# Allow requests from any origin
+# Allow requests from any origin 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
