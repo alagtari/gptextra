@@ -1,0 +1,18 @@
+GET http://localhost:8000/chat
+
+###
+POST http://localhost:8000/chat/chat_chaima
+
+###
+DELETE http://localhost:8000/chat/2
+
+###
+POST http://localhost:8000/question
+
+{
+  "text": "string",
+  "image": "string",
+  "audio": "string",
+  "chat_id": 0
+}
+ 
