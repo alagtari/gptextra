@@ -2,7 +2,7 @@ import openai
 
 def chat_completion(text) :
     print(text)
-    openai.api_key = "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"
+    openai.api_key = ""
     completion = openai.ChatCompletion.create(
     model = 'gpt-3.5-turbo',
     messages = [
