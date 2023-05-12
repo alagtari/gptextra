@@ -1,0 +1,33 @@
+"""if os.path.exists('output.wav') :
+        
+        audio_text = voice_to_text()
+        text += "."+audio_text
+        with open('output.wav', 'rb') as audio_file:
+              audio_bytes = audio_file.read()
+        # Encode audio bytes as base64
+        audio_base64 = base64.b64encode(audio_bytes)
+        QuestionSchema['audio'] = audio_base64
+        #os.remove('output.wav')
+    QuestionSchema["response_text"] = chat_completion(text)
+
+    Question = models.Question(**QuestionSchema)
+    db.add(Question)
+    db.commit()
+    print(Question)
+    question = {
+        "id": Question.id,
+        "question_text": Question.question_text,
+        "image": Question.image,
+        "audio": Question.audio,
+        "response_text":Question.response_text
+    }
+    return question"""
+    #text = voice_text+" . "+image_text
+    #text_response = chat_completion(text)
+    #print(text_response)
+    #audio(text_response)
+    
+    """Question = models.Question(**QuestionSchema)
+    db.add(Question)
+    db.commit()
+    return Question"""

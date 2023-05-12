@@ -1,4 +1,4 @@
-GET http://localhost:8000/chat
+GET http://localhost:8000/questions/1
 
 ###
 POST http://localhost:8000/chat/chat_chaima

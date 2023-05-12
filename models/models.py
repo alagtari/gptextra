@@ -11,12 +11,12 @@ class Chat(Base):
 class Question(Base):
     __tablename__ = 'question'
     id = Column(Integer, primary_key=True)
-    question_text = Column(String(255))
-    response_text = Column(String(255))
+    question_text = Column(String(65535))
+    response_text = Column(String(65535)) 
     chat_id = Column(Integer, ForeignKey('chat.id'))
-    image = Column(LargeBinary)
-    audio = Column(LargeBinary)
-    response_audio = Column(LargeBinary)  
+    image = Column(LargeBinary(2**32-1))
+    audio = Column(LargeBinary(2**32-1))
+    response_audio = Column(LargeBinary(2**32-1))  
 
 
 

@@ -1,16 +1,15 @@
 import openai
 
-def chat_completion(image,text) :
-    openai.api_key = "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"
+def chat_completion(text) :
+    print(text)
+    openai.api_key = "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"
     completion = openai.ChatCompletion.create(
     model = 'gpt-3.5-turbo',
     messages = [
-    {'role': 'user', 'content': text+image}
+    {'role': 'user', 'content': text}
     ],
     temperature = 0  
     )
 
-    print(completion['choices'][0]['message']['content'])
-    with open('file.txt','w') as file :
-        file.write(completion['choices'][0]['message']['content'])
+    return completion['choices'][0]['message']['content']
 

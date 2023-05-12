@@ -13,9 +13,7 @@ db_name = 'chatgpt'
 SQLALCHEMY_DATABASE_URL = f'mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}'
 
 
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL,echo=True,
-)
+engine = create_engine(SQLALCHEMY_DATABASE_URL,echo=True)
 
 
 

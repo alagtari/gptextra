@@ -5,7 +5,7 @@ from models.db import  SessionLocal
 from pydantic import BaseModel
 from schemas import Question as QuestionSchema
 import json
-
+import os
 
 
 router = APIRouter(tags=['projects'])
@@ -26,18 +26,24 @@ def get_db():
 async def create( request : Request ,db: Session = Depends(get_db)):
 
         body = json.loads(await request.body())
+        tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
+        #  Check if the file exists
+        if "image" in body.keys() and not os.path.exists(tesseract_path):
+            return {"status" : 404 , "message" : "you set your open ai api key " }
+        if "image" in body.keys() and not os.path.exists(tesseract_path):
+            return {"status" : 404 , "message" : "you must install tesseract.exe to enable image recognition " }
         response = question.create(db,body)
-        return {"status" : 200 , "data" : response }
+        return response
 
 
 
 
 
 
-@router.put("/question")
-def get_all( name : str ,db: Session = Depends(get_db)):
-
-        questions = question.get_all(db)
+@router.get("/questions/{id}")
+def get_all( id : int ,db: Session = Depends(get_db)):
+        questions = question.get_by_chat_id(db,id)
         return {"status" : 200 , "data" : questions }
 
 @router.delete("/question/{id}")

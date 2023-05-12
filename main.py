@@ -7,7 +7,7 @@ import uvicorn
 import routers.chat as chat
 import routers.question as question
 import routers.test as test
-
+from utils.record import record
 
 
 models.Base.metadata.create_all(bind=engine)   
@@ -27,6 +27,10 @@ app.add_middleware(
 @app.get('/')
 async def root():
     return {"message": "Hello World"}
+
+@app.get('/record')
+async def root():
+    record()
 
 app.include_router(chat.router)
 app.include_router(question.router)

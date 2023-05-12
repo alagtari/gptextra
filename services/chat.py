@@ -1,9 +1,21 @@
 from sqlalchemy.orm import Session
 import models.models as models
+from utils.formatresponse import format
 
 def get_by_id(db: Session, id: int):
     user = db.query(models.Chat).filter(models.Chat.id == id).first()
-    return user.questions
+    questions = user.questions
+    response_questions = []
+    for Question in questions :
+        question = {
+        "id": Question.id,
+        "question_text": format(Question.question_text),
+        "image": Question.image,
+        "audio": Question.audio,
+        "response_text":Question.response_text  
+        }
+        response_questions.append(question)
+    return response_questions
 
 def get_all(db: Session):
     Chats = db.query(models.Chat).all()    
