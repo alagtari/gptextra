@@ -1,7 +1,6 @@
 import openai
 
 def chat_completion(text) :
-    print(text)
     openai.api_key = ""
     completion = openai.ChatCompletion.create(
     model = 'gpt-3.5-turbo',

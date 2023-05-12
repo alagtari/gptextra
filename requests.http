@@ -4,15 +4,10 @@ GET http://localhost:8000/questions/1
 POST http://localhost:8000/chat/chat_chaima
 
 ###
-DELETE http://localhost:8000/chat/2
+DELETE http://localhost:8000/chat/3
 
 ###
-POST http://localhost:8000/question
+GET http://localhost:8000/questions/1
 
-{
-  "text": "string",
-  "image": "string",
-  "audio": "string",
-  "chat_id": 0
-}
+
  

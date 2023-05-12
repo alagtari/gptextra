@@ -22,8 +22,6 @@ def record() :
     for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
         data = stream.read(CHUNK)
         frames.append(data)
-    print("Finished recording.")
-
     # Stop audio stream and close PyAudio
     stream.stop_stream()
     stream.close()

@@ -19,10 +19,6 @@ def get_by_id(db: Session, id: int):
 
 def get_all(db: Session):
     Chats = db.query(models.Chat).all()    
-    try :
-        Chats[0].questions
-    except :
-        return []
     return Chats    
 
 

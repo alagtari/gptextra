@@ -24,7 +24,7 @@ def get_all(db: Session = Depends(get_db)):
         chats = chat.get_all(db)
         return {"status" : 200 , "data" : chats }
 
-@router.post("/chat/{name}")
+@router.post("/chat/{id}")
 def get_all( name:str,db: Session = Depends(get_db)):
 
         chats = chat.create(db,name)

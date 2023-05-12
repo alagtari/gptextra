@@ -6,7 +6,6 @@ import base64
 def audio(text):
     text =text.split('```')[::2]
     response = '.'.join(text)
-    print(response)
     language = detect(response)
     tts = gTTS(text=response, lang=language)
     tts.save("response.wav")
